@@ -1,13 +1,31 @@
-1. 직선 코스로 달리게 했는데 p = 0.1 이 적당한 것 같은.
-2. 그런데 코너에서 에러가 계속 누적돼서 진동 폭이 커짐.
-3. 코너에서의 안정화를 목표로 d=1.4 값을 설정함
-4. 코너에서 많이 벗어나지 않도록 하기 위해 i = 0.002 도입
-5. 코너에서의 반응성을 높이기 위해 p = 0.2 로 올림
-6. 반응성은 높아졌으나 안정성이 떨어져 d = 2.7 로 올림
-7. 코너 후 직진 코스에서 진동이 심해 i = 0.001 로 낮춤
 
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
+
+---
+
+## Effect of the components
+
+* P
+
+P component uses the proportion of the error value for control. It plays the strongest roll among all parameters. However, when the magnitude of error reaches to the certain amount near the target, it is not possible to reduce the error.
+* I
+
+I component uses accumulated error for control. When the error is keep biased, I component reduces the error to reach target. However, reactivity I component is relatively low.
+
+* D
+
+D component uses the derivative of the error for control. It fastly reduces the error toward the opposite side of the error change.
+
+
+## Parameter tuning log
+
+* Set P=0.1 by observing car behavior in the straight way, but it made the error diverged in the corner way.
+* To reduce error in the corner way, set D=1.4
+* To have stability after the corner way, set I=0.002
+* Reactivity at the severely curved corner way was not enough, so increased P to P=0.2
+* By increased P, stability drop was observed. Increased D to D=2.7
+* To reduce the oscillation of the error at the straight way after the corner, decreased I to I=0.01
 
 ---
 
