@@ -25,7 +25,7 @@ D component uses the derivative of the error for control. It fastly reduces the 
 * To have stability after the corner way, set I=0.002
 * Reactivity at the severely curved corner way was not enough, so increased P to P=0.2
 * By increased P, stability drop was observed. Increased D to D=2.7
-* To reduce the oscillation of the error at the straight way after the corner, decreased I to I=0.01
+* To reduce the oscillation of the error at the straight way after the corner, decreased I to I=0.001
 
 ---
 

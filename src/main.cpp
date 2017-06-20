@@ -33,9 +33,9 @@ int main(const int argc, const char* argv[])
 {
   uWS::Hub h;
 
-  double kp = strtod(argv[1], NULL);
-  double ki = strtod(argv[2], NULL);
-  double kd = strtod(argv[3], NULL);
+  double kp = 0.2;//strtod(argv[1], NULL);
+  double ki = 0.001;//strtod(argv[2], NULL);
+  double kd = 2.7;//strtod(argv[3], NULL);
 
   std::cout << "Parameters: " << kp << " " << ki << " " << kd << std::endl;
 
